@@ -1,1 +1,12 @@
-spring.application.name=ai-code-helper
+spring:
+  application:
+    name: ai-code-helper
+  profiles:
+    active: local  # local env
+
+langchain4j:
+  community:
+    dashscope:
+      chat-model:
+        model-name: qwen-max
+        api-key: <api key>
