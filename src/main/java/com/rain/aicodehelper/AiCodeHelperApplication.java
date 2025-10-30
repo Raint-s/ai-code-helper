@@ -9,5 +9,4 @@ public class AiCodeHelperApplication {
     public static void main(String[] args) {
         SpringApplication.run(AiCodeHelperApplication.class, args);
     }
-
 }

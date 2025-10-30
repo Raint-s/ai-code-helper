@@ -10,3 +10,4 @@ langchain4j:
       chat-model:
         model-name: qwen-max
         api-key: <api key>
+

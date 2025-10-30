@@ -16,9 +16,12 @@ public class AiCodeHelper {
     //    @Bean
     //    @ConditionalOnProperty({"langchain4j.community.dashscope.chat-model.api-key"})
     //    QwenChatModel qwenChatModel(Properties properties) {
+    //
+    //    }
     @Resource
     private ChatModel qwenChatModel;
 
+    //只支持文本消息
     public String chat(String message){
         //1.构造ChatMessage格式输入
         UserMessage userMessage = UserMessage.from(message);
@@ -32,6 +35,14 @@ public class AiCodeHelper {
         log.info("AI输出： " + aiMessage.toString());
 
         //aiMessage回复的文本内容
+        return aiMessage.text();
+    }
+
+    //调整入参为UserMessage
+    public String chatWithMessage(UserMessage userMessage){
+        ChatResponse chatResponse = qwenChatModel.chat(userMessage);
+        AiMessage aiMessage = chatResponse.aiMessage();
+        log.info("AI输出： " + aiMessage.toString());
         return aiMessage.text();
     }
 }
