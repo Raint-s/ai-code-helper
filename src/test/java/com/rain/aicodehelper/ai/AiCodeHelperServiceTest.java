@@ -28,4 +28,11 @@ class AiCodeHelperServiceTest {
         result = aiCodeHelperService.chat("你好，我是谁来着？");
         System.out.println(result);
     }
+
+    @Test
+    void chatForReport() {
+        String userMessage = "你好，我是程序员Rain，学编程两年半，请帮我制定学习报告";
+        AiCodeHelperService.Report report = aiCodeHelperService.chatForReport(userMessage);
+        System.out.println(report);
+    }
 }
