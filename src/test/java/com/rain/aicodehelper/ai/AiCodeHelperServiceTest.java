@@ -17,4 +17,15 @@ class AiCodeHelperServiceTest {
         String result = aiCodeHelperService.chat("你好，我是程序员Rain");
         System.out.println(result);
     }
+
+    //用来测试带记忆的AiService实现
+    @Test
+    void chatWithMemory() {
+        //这里断点调试看看aiCodeHelperService携带的内容，能看到chatMomery的中间值
+        String result = aiCodeHelperService.chat("你好，我是程序员Rain");
+        System.out.println(result);
+
+        result = aiCodeHelperService.chat("你好，我是谁来着？");
+        System.out.println(result);
+    }
 }
